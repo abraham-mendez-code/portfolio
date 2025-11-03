@@ -8,9 +8,9 @@ public class House extends Asset{
     private int bedrooms;
 
     // constructor
-    public House(String name, double value, int yearBuilt, int squareFeet, int bedrooms) {
+    public House(String name, double marketValue, int yearBuilt, int squareFeet, int bedrooms) {
 
-        super(name, value);
+        super(name, marketValue);
 
         this.yearBuilt = yearBuilt;
         this.squareFeet = squareFeet;
@@ -21,6 +21,6 @@ public class House extends Asset{
     // override
     public double getValue() {
 
-        return 0;
+        return marketValue;
     }
 }

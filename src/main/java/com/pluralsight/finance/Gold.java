@@ -6,9 +6,9 @@ public class Gold extends Asset{
     private double weight;
 
     // constructor
-    public Gold(String name, double value, double weight) {
+    public Gold(String name, double marketValue, double weight) {
 
-        super(name, value);
+        super(name, marketValue);
 
         this.weight = weight;
     }
@@ -17,7 +17,7 @@ public class Gold extends Asset{
     @Override
     public double getValue() {
 
-        return 0;
+        return marketValue;
     }
 
 }

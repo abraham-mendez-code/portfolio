@@ -6,9 +6,9 @@ public class Jewelry extends Asset{
     private double karat;
 
     // constructor
-    public Jewelry(String name, double value, double karat) {
+    public Jewelry(String name, double marketValue, double karat) {
 
-        super(name, value);
+        super(name, marketValue);
 
         this.karat = karat;
 
@@ -18,6 +18,6 @@ public class Jewelry extends Asset{
     @Override
     public double getValue() {
 
-        return 0;
+        return marketValue;
     }
 }
