@@ -1,4 +1,4 @@
-package com.mariokart;
+package com.pluralsight.finance;
 
 /*
       The interface will be used for anything worth money
