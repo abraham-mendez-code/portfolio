@@ -17,17 +17,27 @@ public class BankAccount implements Valuable{
     }
 
     public void deposit(double amount) {
-        // deposit logic here
+
+        // get the absolute value of amount
+        amount = Math.abs(amount);
+
+        // add amount to the balance
+        balance += amount;
     }
 
     public void withdraw(double amount) {
-        // withdrawal logic here
+
+        // get the absolute value of amount
+        amount = Math.abs(amount);
+
+        // only withdraw if balance has sufficient amount
+        balance -= (balance - amount >= 0? amount: 0);
     }
 
     // override
     @Override
     public double getValue() {
 
-        return 0;
+        return balance;
     }
 }
