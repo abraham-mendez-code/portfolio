@@ -1,6 +1,6 @@
 package com.pluralsight.finance;
 
-public class CreditCard implements Valuable{
+public class CreditCard implements Valuable, Comparable<CreditCard>{
 
     // class attributes
     private final String TYPE = "Credit Card";
@@ -15,6 +15,19 @@ public class CreditCard implements Valuable{
         this.accountNumber = accountNumber;
         this.balance = balance;
 
+    }
+
+    // getter methods
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getTYPE() {
+        return TYPE;
     }
 
     public void charge(double amount) {
@@ -40,6 +53,23 @@ public class CreditCard implements Valuable{
     @Override
     public double getValue() {
 
-        return balance;
+        return -balance;
+    }
+
+    @Override
+    public int compareTo(CreditCard c) {
+
+        // this compares by name
+        int name = this.getName().compareTo(c.getName());
+
+        // this compares by absolute value of balance
+        int balance = Double.compare(Math.abs(this.getValue()), Math.abs(c.getValue()) );
+
+        // this compares by account number
+        int accountNumber = this.getAccountNumber().compareTo(c.getAccountNumber());
+
+        // automatically adjust comparison if values match
+        return name == 0 ? (balance == 0 ?  accountNumber : balance): name;
+
     }
 }
