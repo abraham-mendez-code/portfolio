@@ -28,7 +28,14 @@ public class Portfolio implements Valuable{
 
     public double getValue() {
 
-        return 0;
+        double totalValue = 0;
+
+        for (Valuable asset: assets) {
+
+            totalValue += asset.getValue();
+        }
+
+        return totalValue;
     }
 
     public Valuable getMostValuable() {
