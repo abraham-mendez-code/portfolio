@@ -22,9 +22,11 @@ public class UserInterface {
 
         BankAccount account1 = new BankAccount("Pam", "123", 12500);
         Valuable account2 = new BankAccount("Gary", "456", 1500);
+        BankAccount account3 = new BankAccount("Gary", "789", 1500);
 
         portfolio.add(account1);
         portfolio.add(account2);
+        portfolio.add(account3);
     }
 
     // this method displays the main menu manages operations based on input
