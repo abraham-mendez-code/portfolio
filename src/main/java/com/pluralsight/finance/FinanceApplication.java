@@ -20,6 +20,8 @@ public class FinanceApplication {
 
         System.out.println(portfolio.getMostValuable().getValue());
 
+        System.out.println(portfolio.getLeastValuable().getValue());
+
     }
 
 }
