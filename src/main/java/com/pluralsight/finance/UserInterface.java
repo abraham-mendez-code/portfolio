@@ -1,6 +1,7 @@
 package com.pluralsight.finance;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -116,6 +117,8 @@ public class UserInterface {
         }
 
         String bankAccounts = "";
+
+        Collections.sort(bankAccountList);
 
         for (BankAccount b: bankAccountList) {
            bankAccounts += String.format("|%s|%s|%s|\n", center(b.getName(), colWidth),
