@@ -1,7 +1,7 @@
 package com.pluralsight.finance;
 
-import javax.sound.sampled.Port;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Portfolio implements Valuable{
@@ -20,12 +20,14 @@ public class Portfolio implements Valuable{
 
     }
 
+    // this method adds an asset to the portfolio
     public void add (Valuable asset) {
 
         assets.add(asset);
 
     }
 
+    // this method gets the total value of the portfolio
     public double getValue() {
 
         double totalValue = 0;
@@ -38,15 +40,25 @@ public class Portfolio implements Valuable{
         return totalValue;
     }
 
+    // this method returns the most valuable asset
     public Valuable getMostValuable() {
 
-        return null;
+        Valuable mostVal = assets.get(0);
 
+        for (Valuable v: assets) {
+
+            mostVal = v.getValue() > mostVal.getValue()? v: mostVal;
+        }
+
+        return mostVal;
     }
 
+    // this method returns the least valuable asset
     public Valuable getleastValuable() {
 
         return null;
 
     }
+
+
 }
