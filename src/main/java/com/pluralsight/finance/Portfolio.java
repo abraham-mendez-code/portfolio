@@ -1,7 +1,6 @@
 package com.pluralsight.finance;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Portfolio implements Valuable{
@@ -54,7 +53,7 @@ public class Portfolio implements Valuable{
     }
 
     // this method returns the least valuable asset
-    public Valuable getleastValuable() {
+    public Valuable getLeastValuable() {
 
         Valuable leastVal = assets.get(0);
 
