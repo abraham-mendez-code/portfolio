@@ -1,6 +1,7 @@
 package com.pluralsight.finance;
 
 import javax.sound.sampled.Port;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Portfolio implements Valuable{
@@ -15,10 +16,13 @@ public class Portfolio implements Valuable{
 
         this.name = name;
         this.owner = owner;
+        assets = new ArrayList<>();
 
     }
 
     public void add (Valuable asset) {
+
+        assets.add(asset);
 
     }
 
