@@ -47,7 +47,7 @@ public class Portfolio implements Valuable{
 
         for (Valuable v: assets) {
 
-            mostVal = v.getValue() > mostVal.getValue()? v: mostVal;
+            mostVal = v.getValue() > mostVal.getValue() ? v: mostVal;
         }
 
         return mostVal;
@@ -56,7 +56,14 @@ public class Portfolio implements Valuable{
     // this method returns the least valuable asset
     public Valuable getleastValuable() {
 
-        return null;
+        Valuable leastVal = assets.get(0);
+
+        for (Valuable v: assets) {
+
+            leastVal = v.getValue() < leastVal.getValue() ? v: leastVal;
+        }
+
+        return leastVal;
 
     }
 
