@@ -9,6 +9,7 @@ public class UserInterface {
     // class attributes
     private Portfolio portfolio;
     private final Scanner scanner = new Scanner(System.in);
+    private final int colWidth = 15;
 
     // constructor
     public UserInterface() {
@@ -16,7 +17,7 @@ public class UserInterface {
 
     // init method
     private void init() {
-        this.portfolio =new Portfolio("Vacation fund", "Pam and Gary");
+        this.portfolio = new Portfolio("Vacation fund", "Pam and Gary");
 
         BankAccount account1 = new BankAccount("Pam", "123", 12500);
         Valuable account2 = new BankAccount("Gary", "456", 1500);
@@ -75,7 +76,7 @@ public class UserInterface {
 
     public void processGetAssets() {
 
-        this.portfolio.getAssets();
+        displayAssets( this.portfolio.getAssets() );
 
     }
 
@@ -90,13 +91,43 @@ public class UserInterface {
         List<Gold> goldList = new ArrayList<>();
         List<House> houseList = new ArrayList<>();
 
+        // split the list into different types
         for (Valuable v: assets) {
             if (v instanceof BankAccount b) {
                 bankAccountList.add(b);
             }
 
+            if (v instanceof CreditCard c) {
+                creditCardList.add(c);
+            }
+
+            if (v instanceof Jewelry j) {
+                jewelryList.add(j);
+            }
+
+            if (v instanceof Gold g) {
+                goldList.add(g);
+            }
+
+            if (v instanceof House h) {
+                houseList.add(h);
+            }
+
         }
 
+        String bankAccounts = "";
+
+        for (BankAccount b: bankAccountList) {
+           bankAccounts += String.format("|%s|%s|%s|\n", center(b.getName(), colWidth),
+                   center(b.getAccountNumber(), colWidth),
+                   center(b.getValue(), colWidth ) );
+        }
+        System.out.printf("================= %s's =================\n|%s|%s|%s|\n", bankAccountList.get(0).getTYPE(),
+                center("Name", colWidth),
+                center("Account Number", colWidth),
+                center("Balance", colWidth));
+
+        System.out.println(bankAccounts);
     }
 
     // methods for getting parsing user input
