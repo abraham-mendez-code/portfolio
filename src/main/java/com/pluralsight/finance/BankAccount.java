@@ -62,7 +62,7 @@ public class BankAccount implements Valuable, Comparable<BankAccount>{
         int name = this.getName().compareTo(b.getName());
 
         // compare by balance
-        int balance = Double.compare(this.balance, b.balance);
+        int balance = Double.compare(b.getValue(), this.getValue());
 
         // compare by account number
         int accountNumber = this.getAccountNumber().compareTo(b.getAccountNumber());
