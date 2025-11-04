@@ -1,6 +1,6 @@
 package com.pluralsight.finance;
 
-public class House extends Asset{
+public class House extends FixedAsset {
 
     // class attributes
     private int yearBuilt;

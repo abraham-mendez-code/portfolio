@@ -1,13 +1,13 @@
 package com.pluralsight.finance;
 
-public abstract class Asset implements Valuable {
+public abstract class FixedAsset implements Valuable {
 
     // class attributes
     protected String name;
     protected double marketValue;
 
     // constructor
-    public Asset(String name, double marketValue) {
+    public FixedAsset(String name, double marketValue) {
 
         this.name = name;
         this.marketValue = marketValue;
@@ -16,6 +16,5 @@ public abstract class Asset implements Valuable {
 
     @Override
     public abstract double getValue();
-
 
 }

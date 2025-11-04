@@ -26,6 +26,15 @@ public class Portfolio implements Valuable{
 
     }
 
+    // getter methods
+
+    // this method returns all assets
+    public List<Valuable> getAssets() {
+        return assets;
+    }
+
+    // derived getter methods
+
     // this method gets the total value of the portfolio
     public double getValue() {
 

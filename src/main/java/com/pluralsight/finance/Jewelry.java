@@ -1,6 +1,6 @@
 package com.pluralsight.finance;
 
-public class Jewelry extends Asset{
+public class Jewelry extends FixedAsset {
 
     // class attributes
     private double karat;

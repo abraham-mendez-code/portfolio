@@ -1,6 +1,6 @@
 package com.pluralsight.finance;
 
-public class Gold extends Asset{
+public class Gold extends FixedAsset {
 
     // class attributes
     private double weight;
