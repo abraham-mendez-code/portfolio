@@ -8,8 +8,15 @@ public class FinanceApplication {
         BankAccount account1 = new BankAccount("Pam", "123", 12500);
         Valuable account2 = new BankAccount("Gary", "456", 1500);
 
-        account1.deposit(100);
+       // account1.deposit(100);
        // account2.deposit(100);
+
+        Portfolio portfolio = new Portfolio("College Fund", "Gary and Pam");
+
+        portfolio.add(account1);
+        portfolio.add(account2);
+
+        System.out.println(portfolio.getValue());
 
     }
 
