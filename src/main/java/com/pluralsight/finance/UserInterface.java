@@ -62,6 +62,7 @@ public class UserInterface {
                 case 4:
                     break;
                 case 5:
+                    processAddAsset();
                     break;
                 case 6:
                     break;
@@ -81,6 +82,33 @@ public class UserInterface {
 
         displayAssets( this.portfolio.getAssets() );
 
+    }
+
+    public void processAddAsset() {
+
+        String type = getAString("=== Asset Types ===" +
+                "\nBank Account" +
+                "\nCredit Card" +
+                "\nGold" +
+                "\nJewelry" +
+                "\nHouse" +
+                "\nSelect an Asset Type: ").toLowerCase();
+
+        switch (type) {
+            case "bank account":
+                break;
+            case "credit card":
+                break;
+            case "gold":
+                break;
+            case "jewelry":
+                break;
+            case "house":
+                break;
+            default:
+                System.out.println("Invalid input");
+                processAddAsset();
+        }
     }
 
     // HELPER METHODS
@@ -168,6 +196,7 @@ public class UserInterface {
     private String getAString(String message) {
 
         String output;
+
         // get a valid model
         while (true) {
 
