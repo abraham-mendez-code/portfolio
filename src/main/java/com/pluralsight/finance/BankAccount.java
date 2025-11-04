@@ -3,6 +3,7 @@ package com.pluralsight.finance;
 public class BankAccount implements Valuable{
 
     // class attributes
+    private final String TYPE = "Bank Account";
     private String name;
     private String accountNumber;
     private double balance;
@@ -14,6 +15,19 @@ public class BankAccount implements Valuable{
         this.accountNumber = accountNumber;
         this.balance = balance;
 
+    }
+
+    // getter methods
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
     public void deposit(double amount) {

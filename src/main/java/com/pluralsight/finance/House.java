@@ -8,9 +8,9 @@ public class House extends FixedAsset {
     private int bedrooms;
 
     // constructor
-    public House(String name, double marketValue, int yearBuilt, int squareFeet, int bedrooms) {
+    public House( double marketValue, int yearBuilt, int squareFeet, int bedrooms) {
 
-        super(name, marketValue);
+        super("House", marketValue);
 
         this.yearBuilt = yearBuilt;
         this.squareFeet = squareFeet;

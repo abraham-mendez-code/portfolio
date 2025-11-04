@@ -6,9 +6,9 @@ public class Gold extends FixedAsset {
     private double weight;
 
     // constructor
-    public Gold(String name, double marketValue, double weight) {
+    public Gold(double marketValue, double weight) {
 
-        super(name, marketValue);
+        super("Gold", marketValue);
 
         this.weight = weight;
     }

@@ -3,6 +3,7 @@ package com.pluralsight.finance;
 public class CreditCard implements Valuable{
 
     // class attributes
+    private final String TYPE = "Credit Card";
     private String name;
     private String accountNumber;
     private double balance;
