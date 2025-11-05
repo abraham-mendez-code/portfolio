@@ -56,8 +56,10 @@ public class UserInterface {
                     processGetAssets();
                     break;
                 case 2:
+                    processGetValue();
                     break;
                 case 3:
+                    // processMaxValue();
                     break;
                 case 4:
                     break;
@@ -78,43 +80,54 @@ public class UserInterface {
 
     }
 
+    // this method returns all assets
     public void processGetAssets() {
 
         displayAssets( this.portfolio.getAssets() );
 
     }
 
+    // this method prints the total value of the portfolio
+    public void processGetValue() {
+
+        System.out.println("Total value: " + portfolio.getValue());
+
+    }
+
+    // this method gets the highest value asset
+
+
     // this method prompts users to add new assets to their portfolio
     public void processAddAsset() {
 
-        String type = getAString("=== Asset Types ===" +
-                "\nBank Account" +
-                "\nCredit Card" +
-                "\nGold" +
-                "\nJewelry" +
-                "\nHouse" +
-                "\nSelect an Asset Type: ").toLowerCase();
+        int type = getAInteger("=== Asset Types ===" +
+                "\n1 - Bank Account" +
+                "\n2 - Credit Card" +
+                "\n3 - Gold" +
+                "\n4 - Jewelry" +
+                "\n5 - House" +
+                "\n - Select an Asset Type: ");
 
         switch (type) {
-            case "bank account":
+            case 1:
                 portfolio.add(new BankAccount(getAString("Enter the name for the account: "),
                         getAString("Enter the account number: "),
                         getADouble("Enter initial deposit amount: ")));
                 break;
-            case "credit card":
+            case 2:
                 portfolio.add(new CreditCard(getAString("Enter the name for the account: "),
                         getAString("Enter the account number: "),
                         getADouble("Enter initial deposit amount: ")));
                 break;
-            case "gold":
+            case 3:
                 portfolio.add(new Gold(getADouble("Enter the market value of the gold: "),
                         getADouble("Enter the weight: ")));
                 break;
-            case "jewelry":
+            case 4:
                 portfolio.add(new Jewelry(getADouble("Enter the market value: "),
                         getADouble("Enter the karat")));
                 break;
-            case "house":
+            case 5:
                 portfolio.add(new House(getADouble("Enter the market value: "),
                         getAInteger("Enter the year the house was built: "),
                         getAInteger("Enter the square feet: "),
