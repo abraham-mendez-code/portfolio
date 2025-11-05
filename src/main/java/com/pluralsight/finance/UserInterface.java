@@ -59,7 +59,7 @@ public class UserInterface {
                     processGetValue();
                     break;
                 case 3:
-                    // processMaxValue();
+                    processMaxValue();
                     break;
                 case 4:
                     break;
@@ -95,7 +95,9 @@ public class UserInterface {
     }
 
     // this method gets the highest value asset
-
+    public void processMaxValue() {
+        System.out.println(portfolio.getMostValuable().getValue());
+    }
 
     // this method prompts users to add new assets to their portfolio
     public void processAddAsset() {
