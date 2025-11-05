@@ -84,6 +84,7 @@ public class UserInterface {
 
     }
 
+    // this method prompts users to add new assets to their portfolio
     public void processAddAsset() {
 
         String type = getAString("=== Asset Types ===" +
@@ -96,14 +97,28 @@ public class UserInterface {
 
         switch (type) {
             case "bank account":
+                portfolio.add(new BankAccount(getAString("Enter the name for the account: "),
+                        getAString("Enter the account number: "),
+                        getADouble("Enter initial deposit amount: ")));
                 break;
             case "credit card":
+                portfolio.add(new CreditCard(getAString("Enter the name for the account: "),
+                        getAString("Enter the account number: "),
+                        getADouble("Enter initial deposit amount: ")));
                 break;
             case "gold":
+                portfolio.add(new Gold(getADouble("Enter the market value of the gold: "),
+                        getADouble("Enter the weight: ")));
                 break;
             case "jewelry":
+                portfolio.add(new Jewelry(getADouble("Enter the market value: "),
+                        getADouble("Enter the karat")));
                 break;
             case "house":
+                portfolio.add(new House(getADouble("Enter the market value: "),
+                        getAInteger("Enter the year the house was built: "),
+                        getAInteger("Enter the square feet: "),
+                        getAInteger("Enter the amount of rooms: ") ));
                 break;
             default:
                 System.out.println("Invalid input");

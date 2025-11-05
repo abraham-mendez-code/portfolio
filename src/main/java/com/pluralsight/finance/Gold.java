@@ -13,6 +13,10 @@ public class Gold extends FixedAsset {
         this.weight = weight;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
     // override
     @Override
     public double getValue() {

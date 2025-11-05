@@ -1,6 +1,8 @@
 package com.pluralsight.finance;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Portfolio implements Valuable{
@@ -51,27 +53,14 @@ public class Portfolio implements Valuable{
     // this method returns the most valuable asset
     public Valuable getMostValuable() {
 
-        Valuable mostVal = assets.get(0);
+       return Collections.max(assets, Comparator.comparing(Valuable::getValue));
 
-        for (Valuable v: assets) {
-
-            mostVal = v.getValue() > mostVal.getValue() ? v: mostVal;
-        }
-
-        return mostVal;
     }
 
     // this method returns the least valuable asset
     public Valuable getLeastValuable() {
 
-        Valuable leastVal = assets.get(0);
-
-        for (Valuable v: assets) {
-
-            leastVal = v.getValue() < leastVal.getValue() ? v: leastVal;
-        }
-
-        return leastVal;
+        return Collections.min(assets, Comparator.comparing(Valuable::getValue));
 
     }
 
