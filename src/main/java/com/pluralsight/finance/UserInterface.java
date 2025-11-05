@@ -41,7 +41,6 @@ public class UserInterface {
                 3. View most valuable asset
                 4. View least valuable asset
                 5. Add asset to portfolio
-                6. Remove asset from portfolio
                 0. Exit
                 Enter a command:\s""";
 
@@ -62,11 +61,10 @@ public class UserInterface {
                     processMaxValue();
                     break;
                 case 4:
+                    processMinValue();
                     break;
                 case 5:
                     processAddAsset();
-                    break;
-                case 6:
                     break;
                 case 0:
                     System.out.println("Exiting application. Goodbye!");
@@ -96,7 +94,12 @@ public class UserInterface {
 
     // this method gets the highest value asset
     public void processMaxValue() {
-        System.out.println(portfolio.getMostValuable().getValue());
+        System.out.println("Highest Value: " + portfolio.getMostValuable().getValue());
+    }
+
+    // this method gets the lowest value asset
+    public void processMinValue() {
+        System.out.println("Lowest Value: " + portfolio.getLeastValuable().getValue());
     }
 
     // this method prompts users to add new assets to their portfolio
